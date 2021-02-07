@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector <vector<int>> graph;
+vector <bool> visit;
+int root;
+
+void dfs(vector <vector<int>> graph, int root, vector<bool> visit)
+{
+   visit[root] = true;
+   cout << root << " ";
+   for (int i = 0; i < graph[root].size(); i++)
+   {
+      if (!visit[graph[root][i]]) {
+         dfs(graph, i, visit);
+      }
+   }
+}
+
+void bfs(int root)
+{
+   queue<int> q;
+   q.push(root);
+   visit[start]
+}
+
+int main()
+{
+   int node, edge, root;
+   cin >> node >> edge >> root;
+   int a, b;
+   graph.resize(node + 1);
+   visit.resize(node + 1);
+   for(int i = 0; i < edge; i++)
+   {
+      cin >> a >> b;
+      graph[a].push_back(b); 
+      graph[b].push_back(a);
+   }
+
+   dfs(graph, root, visit);
+   visit = { false };
+   bfs(root);
+
+}
